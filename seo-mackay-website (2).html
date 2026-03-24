@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Business Name — SEO & Visibility Mackay</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --bg:#0b0e13;
+  --surface:#13171f;
+  --surface2:#1a1f2b;
+  --accent:#f0b429;
+  --accent2:#ffd166;
+  --text:#f0f2f7;
+  --muted:#8892a4;
+  --border:rgba(240,180,41,0.15);
+  --border2:rgba(240,242,247,0.07);
+  --font-display:'Bebas Neue',sans-serif;
+  --font:'Outfit',sans-serif;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 5%;background:rgba(11,14,19,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border2);transition:all 0.3s;}
+.nav-logo{font-family:var(--font-display);font-size:1.5rem;letter-spacing:0.05em;color:var(--text);}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--accent);}
+.nav-cta{background:var(--accent);color:#000!important;padding:0.55rem 1.4rem;border-radius:6px;font-weight:600!important;transition:opacity 0.2s!important;}
+.nav-cta:hover{opacity:0.85;}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;align-items:center;padding:0 5%;position:relative;overflow:hidden;background:var(--bg);}
+.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(240,180,41,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(240,180,41,0.04) 1px,transparent 1px);background-size:60px 60px;}
+.hero-accent-bar{position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,transparent,var(--accent),transparent);}
+.hero-orb{position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(240,180,41,0.06) 0%,transparent 70%);}
+.hero-inner{position:relative;z-index:2;max-width:820px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;background:rgba(240,180,41,0.08);border:1px solid var(--border);padding:0.4rem 1rem;border-radius:4px;margin-bottom:2rem;}
+.hero-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);}}
+.hero-eyebrow span{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);}
+.hero-title{font-family:var(--font-display);font-size:clamp(4rem,9vw,8.5rem);line-height:0.92;letter-spacing:0.02em;color:var(--text);margin-bottom:1.5rem;}
+.hero-title .highlight{color:var(--accent);display:block;}
+.hero-title .outline{-webkit-text-stroke:1px rgba(240,242,247,0.25);color:transparent;}
+.hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.75;max-width:520px;margin-bottom:2.5rem;font-weight:300;}
+.hero-sub strong{color:var(--text);font-weight:500;}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#000;padding:0.9rem 2rem;border-radius:6px;font-family:var(--font);font-size:0.85rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);}
+.btn-secondary{display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:var(--text);padding:0.9rem 2rem;border-radius:6px;font-family:var(--font);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border2);transition:all 0.2s;}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+.hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border2);}
+.hero-stat-num{font-family:var(--font-display);font-size:2.8rem;color:var(--accent);line-height:1;}
+.hero-stat-label{font-size:0.78rem;color:var(--muted);margin-top:0.3rem;font-weight:400;letter-spacing:0.04em;}
+
+/* ── SECTION SHARED ── */
+section{padding:7rem 5%;}
+.inner{max-width:1100px;margin:0 auto;}
+.section-tag{display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.25rem;}
+.section-tag-line{width:30px;height:2px;background:var(--accent);}
+.section-tag span{font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
+.section-title{font-family:var(--font-display);font-size:clamp(2.8rem,5vw,5rem);line-height:0.95;letter-spacing:0.02em;color:var(--text);margin-bottom:1rem;}
+.section-sub{color:var(--muted);font-size:0.9rem;line-height:1.8;max-width:500px;margin-bottom:3.5rem;font-weight:300;}
+
+/* ── SERVICES ── */
+#services{background:var(--surface);}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.svc-card{background:var(--bg);border:1px solid var(--border2);border-radius:12px;padding:2.5rem;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.3s;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;}
+.svc-card:hover{border-color:rgba(240,180,41,0.3);transform:translateY(-4px);}
+.svc-card:hover::before{transform:scaleX(1);}
+.svc-num{font-family:var(--font-display);font-size:4rem;color:rgba(240,180,41,0.07);line-height:1;margin-bottom:1.25rem;}
+.svc-card h3{font-family:var(--font-display);font-size:1.8rem;letter-spacing:0.03em;color:var(--text);margin-bottom:0.75rem;}
+.svc-card p{font-size:0.84rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;}
+.svc-list{list-style:none;display:flex;flex-direction:column;gap:0.45rem;}
+.svc-list li{font-size:0.8rem;color:rgba(240,242,247,0.55);display:flex;align-items:center;gap:8px;}
+.svc-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+.svc-price{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;}
+.svc-price-val{font-family:var(--font-display);font-size:2rem;color:var(--accent);}
+.svc-price-lbl{font-size:0.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;}
+.svc-price-arrow{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1rem;transition:all 0.3s;}
+.svc-card:hover .svc-price-arrow{background:var(--accent);color:#000;border-color:var(--accent);}
+
+/* ── FREE AUDIT ── */
+#audit{background:var(--bg);position:relative;overflow:hidden;}
+.audit-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(240,180,41,0.03) 0%,transparent 60%);}
+.audit-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;position:relative;z-index:2;}
+.audit-left h2{margin-bottom:1rem;}
+.audit-left p{color:var(--muted);font-size:0.88rem;line-height:1.85;margin-bottom:2rem;font-weight:300;}
+.audit-features{display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem;}
+.audit-feat{display:flex;align-items:flex-start;gap:1rem;}
+.audit-feat-icon{width:36px;height:36px;border-radius:8px;background:rgba(240,180,41,0.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;margin-top:2px;}
+.audit-feat-text h4{font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.2rem;}
+.audit-feat-text p{font-size:0.8rem;color:var(--muted);line-height:1.6;}
+.audit-card{background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:2.5rem;position:relative;}
+.audit-card::before{content:'FREE AUDIT';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;font-size:0.65rem;font-weight:800;letter-spacing:0.15em;padding:4px 16px;border-radius:0 0 8px 8px;}
+.audit-card h3{font-family:var(--font-display);font-size:1.8rem;color:var(--text);margin-bottom:0.5rem;margin-top:1rem;}
+.audit-card p{font-size:0.82rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7;}
+.audit-form{display:flex;flex-direction:column;gap:0.85rem;}
+.fg{display:flex;flex-direction:column;gap:0.35rem;}
+.fg label{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.fg input,.fg select,.fg textarea{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:0.75rem 1rem;color:var(--text);font-family:var(--font);font-size:0.87rem;outline:none;width:100%;transition:border-color 0.2s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--accent);}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(136,146,164,0.5);}
+.fg select option{background:var(--surface2);}
+.fg textarea{resize:none;height:90px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;}
+.submit-btn{width:100%;background:var(--accent);color:#000;border:none;padding:1rem;border-radius:8px;font-family:var(--font);font-size:0.85rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;margin-top:0.25rem;}
+.submit-btn:hover{background:var(--accent2);transform:translateY(-1px);}
+.form-note{font-size:0.72rem;color:var(--muted);text-align:center;margin-top:0.75rem;}
+
+/* ── ABOUT ── */
+#about{background:var(--surface);}
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:7rem;align-items:center;}
+.about-img-wrap{position:relative;}
+.about-img-box{background:var(--surface2);border:1px solid var(--border2);border-radius:16px;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;}
+.about-img-placeholder{font-family:var(--font-display);font-size:8rem;color:rgba(240,180,41,0.08);user-select:none;}
+.about-img-tag{position:absolute;bottom:1.5rem;left:1.5rem;background:var(--accent);color:#000;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.5rem 1rem;border-radius:6px;}
+.about-corner{position:absolute;bottom:-20px;right:-20px;width:120px;height:120px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg);}
+.about-corner-inner{font-family:var(--font-display);font-size:0.65rem;letter-spacing:0.12em;text-align:center;color:var(--accent);line-height:1.4;}
+.about-right h2{margin-bottom:1rem;}
+.about-right>p{color:rgba(240,242,247,0.65);font-size:0.9rem;line-height:1.9;margin-bottom:1.25rem;font-weight:300;}
+.about-right>p:first-of-type{color:rgba(240,242,247,0.9);font-size:0.95rem;}
+.about-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:2rem;}
+.about-tag{background:rgba(240,180,41,0.06);border:1px solid var(--border);color:rgba(240,242,247,0.5);font-size:0.72rem;font-weight:500;padding:0.35rem 0.9rem;letter-spacing:0.06em;border-radius:4px;}
+.about-highlight{background:var(--bg);border:1px solid var(--border2);border-radius:12px;padding:1.5rem;margin-top:2rem;border-left:3px solid var(--accent);}
+.about-highlight p{font-size:0.88rem;color:var(--muted);line-height:1.75;font-style:italic;}
+.about-highlight strong{color:var(--accent);font-style:normal;}
+
+/* ── CONTACT ── */
+#contact{background:var(--bg);position:relative;overflow:hidden;}
+#contact::before{content:'';position:absolute;bottom:-200px;right:-200px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(240,180,41,0.05) 0%,transparent 70%);}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:6rem;align-items:start;position:relative;z-index:2;}
+.contact-left h2{margin-bottom:1rem;}
+.contact-left>p{color:var(--muted);font-size:0.88rem;line-height:1.85;margin-bottom:2.5rem;font-weight:300;}
+.contact-detail{display:flex;align-items:center;gap:0.75rem;color:var(--muted);font-size:0.84rem;margin-bottom:0.85rem;text-decoration:none;transition:color 0.2s;}
+.contact-detail:hover{color:var(--accent);}
+.contact-detail-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+.contact-form{background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:2.5rem;display:flex;flex-direction:column;gap:1rem;}
+.contact-form h3{font-family:var(--font-display);font-size:1.6rem;color:var(--text);margin-bottom:0.25rem;}
+.contact-form p{font-size:0.82rem;color:var(--muted);margin-bottom:0.75rem;}
+
+/* ── FOOTER ── */
+footer{padding:2rem 5%;background:var(--surface);border-top:1px solid var(--border2);}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-logo{font-family:var(--font-display);font-size:1.2rem;color:var(--muted);letter-spacing:0.05em;}
+.footer-logo span{color:var(--accent);}
+footer p{font-size:0.72rem;color:rgba(240,242,247,0.2);letter-spacing:0.04em;}
+.footer-links{display:flex;gap:1.5rem;}
+.footer-links a{font-size:0.75rem;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--accent);}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.hero-inner>*{animation:fadeUp 0.7s ease both;}
+.hero-eyebrow{animation-delay:0.1s;}
+.hero-title{animation-delay:0.2s;}
+.hero-sub{animation-delay:0.35s;}
+.hero-buttons{animation-delay:0.5s;}
+.hero-stats{animation-delay:0.65s;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .services-grid{grid-template-columns:1fr;}
+  .audit-inner,.about-grid,.contact-grid{grid-template-columns:1fr;gap:3rem;}
+  .hero-stats{gap:2rem;}
+  .form-row{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .about-img-wrap{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Your<span>SEO</span></div>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="#audit">Free Audit</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-accent-bar"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot"></div>
+      <span>SEO & Visibility — Mackay QLD</span>
+    </div>
+    <h1 class="hero-title">
+      Get Found
+      <span class="highlight">On Google.</span>
+      <span class="outline">Win More</span>
+      Customers.
+    </h1>
+    <p class="hero-sub">I help <strong>Mackay businesses</strong> rank higher on Google and Google Maps — bringing in more customers every month without spending a fortune on ads.</p>
+    <div class="hero-buttons">
+      <a href="#audit" class="btn-primary">Get your free audit →</a>
+      <a href="#services" class="btn-secondary">See services</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">$800</div>
+        <div class="hero-stat-label">Starting from / month</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">90</div>
+        <div class="hero-stat-label">Days to see results</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Local Mackay focus</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="inner">
+    <div class="section-tag"><div class="section-tag-line"></div><span>What I offer</span></div>
+    <h2 class="section-title">Three Plans.<br>One Goal.</h2>
+    <p class="section-sub">Simple, transparent pricing with no lock-in contracts. Pick the plan that suits your business and I'll get to work straight away.</p>
+
+    <!-- what's included intro row -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;">
+      <div style="background:var(--surface);border:1px solid var(--border2);border-radius:10px;padding:1.25rem;display:flex;align-items:center;gap:0.85rem;">
+        <div style="font-size:1.4rem;">📈</div>
+        <div>
+          <div style="font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:0.2rem;">Google Rankings</div>
+          <div style="font-size:0.75rem;color:var(--muted);">Get found when customers search</div>
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border2);border-radius:10px;padding:1.25rem;display:flex;align-items:center;gap:0.85rem;">
+        <div style="font-size:1.4rem;">📍</div>
+        <div>
+          <div style="font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:0.2rem;">Google Maps Top 3</div>
+          <div style="font-size:0.75rem;color:var(--muted);">Appear where locals click first</div>
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border2);border-radius:10px;padding:1.25rem;display:flex;align-items:center;gap:0.85rem;">
+        <div style="font-size:1.4rem;">📊</div>
+        <div>
+          <div style="font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:0.2rem;">Monthly Reports</div>
+          <div style="font-size:0.75rem;color:var(--muted);">Clear results you can measure</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="svc-card">
+        <div class="svc-num">01</div>
+        <h3>SEO Starter</h3>
+        <p>Perfect for businesses just getting started with Google. I'll build your foundation, get your Google Business Profile optimised, and start moving you up the rankings.</p>
+        <ul class="svc-list">
+          <li>Full keyword research & strategy</li>
+          <li>Google Business Profile setup & management</li>
+          <li>On-page SEO optimisation</li>
+          <li>2 SEO-optimised blog posts per month</li>
+          <li>Monthly keyword rank tracking</li>
+          <li>Google review generation strategy</li>
+          <li>Monthly performance report</li>
+          <li>No lock-in contract</li>
+        </ul>
+        <div class="svc-price">
+          <div>
+            <div class="svc-price-lbl">From</div>
+            <div class="svc-price-val">$800<span style="font-size:1rem;color:var(--muted);font-family:var(--font);font-weight:300">/mo</span></div>
+          </div>
+          <a href="#contact" class="svc-price-arrow">→</a>
+        </div>
+      </div>
+
+      <div class="svc-card" style="border-color:rgba(240,180,41,0.2);background:rgba(240,180,41,0.02);">
+        <div style="position:absolute;top:1.5rem;right:1.5rem;background:var(--accent);color:#000;font-size:0.62rem;font-weight:800;letter-spacing:0.12em;padding:3px 10px;border-radius:4px;text-transform:uppercase;">Most Popular</div>
+        <div class="svc-num">02</div>
+        <h3>SEO Growth</h3>
+        <p>For businesses ready to seriously compete on Google. More content, backlink building, and full competitor monitoring to keep you ahead of the pack.</p>
+        <ul class="svc-list">
+          <li>Everything in Starter</li>
+          <li>4 SEO-optimised blog posts per month</li>
+          <li>Backlink building campaign</li>
+          <li>Competitor monitoring & analysis</li>
+          <li>Technical SEO fixes & improvements</li>
+          <li>Weekly keyword ranking updates</li>
+          <li>Google & Maps advanced optimisation</li>
+          <li>No lock-in contract</li>
+        </ul>
+        <div class="svc-price">
+          <div>
+            <div class="svc-price-lbl">From</div>
+            <div class="svc-price-val">$1,500<span style="font-size:1rem;color:var(--muted);font-family:var(--font);font-weight:300">/mo</span></div>
+          </div>
+          <a href="#contact" class="svc-price-arrow">→</a>
+        </div>
+      </div>
+
+      <div class="svc-card" style="border-color:rgba(240,180,41,0.3);background:linear-gradient(145deg,rgba(240,180,41,0.04),var(--bg));">
+        <div style="position:absolute;top:1.5rem;right:1.5rem;background:transparent;color:var(--accent);font-size:0.62rem;font-weight:800;letter-spacing:0.12em;padding:3px 10px;border-radius:4px;text-transform:uppercase;border:1px solid var(--border);">◆ VIP</div>
+        <div class="svc-num">03</div>
+        <h3>Visibility Pro</h3>
+        <p>My exclusive VIP membership for businesses that want to completely dominate their market online. SEO, paid ads, and content all managed under one roof.</p>
+        <ul class="svc-list">
+          <li>Everything in Growth</li>
+          <li>6 SEO-optimised blog posts per month</li>
+          <li>Social media content creation</li>
+          <li>Google Ads management — VIP only</li>
+          <li>Meta Ads management — VIP only</li>
+          <li>Full AI automation suite</li>
+          <li>Dedicated account manager</li>
+          <li>Priority support & direct access</li>
+        </ul>
+        <div style="background:rgba(240,180,41,0.06);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;margin:1.25rem 0;font-size:0.75rem;color:var(--muted);">
+          <span style="color:var(--accent);font-weight:600;">Limited spots available</span> — I only take on a small number of VIP clients at a time to ensure quality.
+        </div>
+        <div class="svc-price">
+          <div>
+            <div class="svc-price-lbl">From</div>
+            <div class="svc-price-val">$3,000<span style="font-size:1rem;color:var(--muted);font-family:var(--font);font-weight:300">/mo</span></div>
+          </div>
+          <a href="#contact" class="svc-price-arrow">→</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- no lock in note -->
+    <div style="text-align:center;margin-top:2rem;padding:1.25rem;background:var(--surface);border:1px solid var(--border2);border-radius:10px;">
+      <p style="font-size:0.82rem;color:var(--muted);">✦ All plans include <strong style="color:var(--text);">no lock-in contracts</strong> — stay because you're getting results, not because you're stuck. &nbsp;·&nbsp; Results typically visible within <strong style="color:var(--text);">60–90 days.</strong></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FREE AUDIT -->
+<section id="audit">
+  <div class="inner">
+    <div class="audit-bg"></div>
+    <div class="audit-inner">
+      <div class="audit-left">
+        <div class="section-tag"><div class="section-tag-line"></div><span>Free offer</span></div>
+        <h2 class="section-title">Get Your Free Google Audit</h2>
+        <p>Not sure where you stand on Google? I'll analyse your entire online presence and send you a clear, honest report showing exactly what's holding you back — and how to fix it. No call needed, no obligation.</p>
+        <div class="audit-features">
+          <div class="audit-feat">
+            <div class="audit-feat-icon">🔍</div>
+            <div class="audit-feat-text">
+              <h4>Google ranking check</h4>
+              <p>I'll check where you currently rank for your most important search terms in Mackay.</p>
+            </div>
+          </div>
+          <div class="audit-feat">
+            <div class="audit-feat-icon">📍</div>
+            <div class="audit-feat-text">
+              <h4>Google Maps audit</h4>
+              <p>I'll review your Google Business Profile and identify exactly what's stopping you appearing in the top 3.</p>
+            </div>
+          </div>
+          <div class="audit-feat">
+            <div class="audit-feat-icon">⚡</div>
+            <div class="audit-feat-text">
+              <h4>Quick wins report</h4>
+              <p>You'll get a list of things you can improve right now — even before working with me.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="audit-card">
+        <h3>Request Your Free Audit</h3>
+        <p>Fill in your details and I'll get your audit back to you within 24 hours.</p>
+        <div class="audit-form">
+          <div class="form-row">
+            <div class="fg"><label>Your Name</label><input type="text" placeholder="Jane Smith"></div>
+            <div class="fg"><label>Business Name</label><input type="text" placeholder="Smith Plumbing"></div>
+          </div>
+          <div class="fg"><label>Email Address</label><input type="email" placeholder="jane@smithplumbing.com.au"></div>
+          <div class="fg"><label>Industry / Business Type</label><input type="text" placeholder="e.g. Plumber, Café, Dentist"></div>
+          <div class="fg">
+            <label>Biggest challenge on Google</label>
+            <select>
+              <option value="">Select one...</option>
+              <option>Not showing up at all</option>
+              <option>Not in the Google Maps top 3</option>
+              <option>Competitors ranking above me</option>
+              <option>Not sure — just want more customers</option>
+            </select>
+          </div>
+          <button class="submit-btn" onclick="submitAudit(this)">Send me the free audit →</button>
+          <p class="form-note">📬 No calls, no pressure. Just a useful report emailed to you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img-box">
+          <div class="about-img-placeholder">YOU</div>
+          <div class="about-img-tag">Based in Mackay, QLD</div>
+        </div>
+        <div class="about-corner">
+          <div class="about-corner-inner">LOCAL<br>SPECIALIST</div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="section-tag"><div class="section-tag-line"></div><span>About me</span></div>
+        <h2 class="section-title">A Local Who<br>Gets It.</h2>
+        <p>I'm a Mackay-based SEO specialist helping local businesses get found online. I use AI-powered tools to deliver results faster and more affordably than traditional agencies — without the big agency price tag.</p>
+        <p>I know what it's like to be a local business competing for attention in Mackay. My focus is on results you can actually measure — more visibility, more enquiries, and more customers through the door.</p>
+        <p>I'm just starting out, which means you get my absolute best work, my full attention, and a genuine drive to get you results. My first clients get treated like they're my only client.</p>
+        <div class="about-highlight">
+          <p><strong>Why AI-powered SEO?</strong> I use the latest AI tools to research keywords, create content, and analyse your competitors — meaning I deliver the same quality as a big agency in a fraction of the time, at a fraction of the cost.</p>
+        </div>
+        <div class="about-tags">
+          <span class="about-tag">Mackay Local</span>
+          <span class="about-tag">Google SEO</span>
+          <span class="about-tag">Google Maps</span>
+          <span class="about-tag">AI-Powered</span>
+          <span class="about-tag">No Lock-In Contracts</span>
+          <span class="about-tag">Monthly Reports</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="inner">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="section-tag"><div class="section-tag-line"></div><span>Get in touch</span></div>
+        <h2 class="section-title">Let's Talk About Your Business.</h2>
+        <p>Have a question about SEO, want to know more about a plan, or ready to get started? Send me a message and I'll get back to you quickly — no pressure, no sales pitch, just a genuine conversation.</p>
+        <a href="/cdn-cgi/l/email-protection#ee868b828281ae97819b9c8c9b9d87808b9d9dc08d8183c08f9b" class="contact-detail">
+          <div class="contact-detail-dot"></div>
+          <span class="__cf_email__" data-cfemail="e68e838a8a89a69f8993948493958f88839595c885898bc88793">[email&#160;protected]</span>
+        </a>
+        <a href="tel:+61400000000" class="contact-detail">
+          <div class="contact-detail-dot"></div>
+          0400 000 000
+        </a>
+        <div class="contact-detail">
+          <div class="contact-detail-dot"></div>
+          Mackay, Queensland
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <p>I'll get back to you within 24 hours.</p>
+        <div class="form-row">
+          <div class="fg"><label>Name</label><input type="text" placeholder="Your name"></div>
+          <div class="fg"><label>Business</label><input type="text" placeholder="Business name"></div>
+        </div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+        <div class="fg"><label>Message</label><textarea placeholder="Tell me about your business and what you're looking for..."></textarea></div>
+        <button class="submit-btn" onclick="submitContact(this)">Send message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Your<span>SEO</span></div>
+    <div class="footer-links">
+      <a href="services.html">Services</a>
+      <a href="#audit">Free Audit</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p>© 2026 Your Business Name — Mackay, QLD</p>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function submitAudit(btn) {
+  btn.textContent = 'Audit request sent ✓';
+  btn.style.background = 'rgba(240,180,41,0.2)';
+  btn.style.color = 'var(--accent)';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Send me the free audit →';
+    btn.style.cssText = '';
+    btn.disabled = false;
+  }, 4000);
+}
+
+function submitContact(btn) {
+  btn.textContent = 'Message sent ✓';
+  btn.style.background = 'rgba(240,180,41,0.2)';
+  btn.style.color = 'var(--accent)';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Send message →';
+    btn.style.cssText = '';
+    btn.disabled = false;
+  }, 4000);
+}
+
+// Smooth nav highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  const sy = window.scrollY + 100;
+  sections.forEach(sec => {
+    if (sy >= sec.offsetTop && sy < sec.offsetTop + sec.offsetHeight) {
+      document.que
