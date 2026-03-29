@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Google Audit — Mackay SEO</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --bg:#0b0e13;
+  --surface:#13171f;
+  --surface2:#1a1f2b;
+  --accent:#f0b429;
+  --accent2:#ffd166;
+  --text:#f0f2f7;
+  --muted:#8892a4;
+  --border:rgba(240,180,41,0.15);
+  --border2:rgba(240,242,247,0.07);
+  --font-display:'Bebas Neue',sans-serif;
+  --font:'Outfit',sans-serif;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;min-height:100vh;}
+
+/* ── NAV ── */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 5%;border-bottom:1px solid var(--border2);background:rgba(11,14,19,0.98);}
+.nav-logo{font-family:var(--font-display);font-size:1.4rem;letter-spacing:0.05em;color:var(--text);}
+.nav-logo span{color:var(--accent);}
+.nav-badge{display:flex;align-items:center;gap:0.5rem;background:rgba(240,180,41,0.08);border:1px solid var(--border);padding:0.35rem 0.9rem;border-radius:4px;}
+.nav-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.nav-badge span{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);}
+
+/* ── HERO ── */
+.hero{padding:5rem 5% 4rem;position:relative;overflow:hidden;text-align:center;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(240,180,41,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,180,41,0.03) 1px,transparent 1px);background-size:50px 50px;}
+.hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(240,180,41,0.05) 0%,transparent 70%);pointer-events:none;}
+.hero-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;}
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(240,180,41,0.08);border:1px solid var(--border);padding:0.4rem 1rem;border-radius:4px;margin-bottom:1.75rem;}
+.hero-tag span{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);}
+.hero-title{font-family:var(--font-display);font-size:clamp(3.5rem,8vw,7rem);line-height:0.92;letter-spacing:0.02em;color:var(--text);margin-bottom:1.25rem;}
+.hero-title .yellow{color:var(--accent);}
+.hero-sub{font-size:1rem;color:var(--muted);line-height:1.8;max-width:520px;margin:0 auto 2.5rem;font-weight:300;}
+.hero-sub strong{color:var(--text);font-weight:500;}
+.hero-arrow{display:flex;flex-direction:column;align-items:center;gap:0.4rem;color:var(--muted);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;margin-top:2rem;}
+.hero-arrow-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--accent),transparent);animation:arrowPulse 2s ease-in-out infinite;}
+@keyframes arrowPulse{0%,100%{opacity:0.4;}50%{opacity:1;}}
+
+/* ── WHAT YOU GET ── */
+.what{padding:4rem 5%;background:var(--surface);}
+.what-inner{max-width:1000px;margin:0 auto;}
+.section-tag{display:flex;align-items:center;gap:0.6rem;margin-bottom:1.25rem;justify-content:center;}
+.section-tag-line{width:24px;height:2px;background:var(--accent);}
+.section-tag span{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
+.what h2{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);color:var(--text);text-align:center;margin-bottom:0.75rem;line-height:0.95;}
+.what-sub{text-align:center;color:var(--muted);font-size:0.88rem;margin-bottom:3rem;font-weight:300;}
+.what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.what-card{background:var(--bg);border:1px solid var(--border2);border-radius:12px;padding:2rem;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.3s;}
+.what-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+.what-card:hover{border-color:rgba(240,180,41,0.25);transform:translateY(-3px);}
+.what-card:hover::after{transform:scaleX(1);}
+.what-icon{width:44px;height:44px;background:rgba(240,180,41,0.08);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1.25rem;}
+.what-card h3{font-family:var(--font-display);font-size:1.4rem;letter-spacing:0.03em;color:var(--text);margin-bottom:0.6rem;}
+.what-card p{font-size:0.82rem;color:var(--muted);line-height:1.75;}
+.what-free-strip{background:rgba(240,180,41,0.05);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.75rem;display:flex;align-items:center;justify-content:space-between;margin-top:1.5rem;flex-wrap:wrap;gap:1rem;}
+.what-free-strip p{font-size:0.85rem;color:var(--muted);}
+.what-free-strip strong{color:var(--accent);}
+.free-badge{background:var(--accent);color:#000;font-size:0.72rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0.45rem 1.1rem;border-radius:5px;}
+
+/* ── FORM ── */
+.form-section{padding:4rem 5%;background:var(--bg);}
+.form-inner{max-width:640px;margin:0 auto;}
+.form-card{background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:2.75rem;position:relative;overflow:hidden;}
+.form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));}
+.form-card-header{text-align:center;margin-bottom:2rem;}
+.form-card-header h2{font-family:var(--font-display);font-size:2.5rem;color:var(--text);margin-bottom:0.5rem;line-height:1;}
+.form-card-header p{font-size:0.85rem;color:var(--muted);line-height:1.7;}
+.form{display:flex;flex-direction:column;gap:1rem;}
+.fg{display:flex;flex-direction:column;gap:0.35rem;}
+.fg label{font-size:0.67rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);}
+.fg input,.fg select,.fg textarea{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:0.8rem 1rem;color:var(--text);font-family:var(--font);font-size:0.87rem;outline:none;width:100%;transition:border-color 0.2s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--accent);}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(136,146,164,0.45);}
+.fg select option{background:var(--surface2);}
+.fg textarea{resize:none;height:90px;line-height:1.6;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.submit-btn{width:100%;background:var(--accent);color:#000;border:none;padding:1.05rem;border-radius:8px;font-family:var(--font);font-size:0.88rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;margin-top:0.5rem;}
+.submit-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+.form-guarantees{display:flex;justify-content:center;gap:1.5rem;margin-top:1.25rem;flex-wrap:wrap;}
+.form-guarantee{display:flex;align-items:center;gap:0.4rem;font-size:0.72rem;color:var(--muted);}
+.form-guarantee-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+
+/* ── ABOUT STRIP ── */
+.about-strip{padding:3.5rem 5%;background:var(--surface);border-top:1px solid var(--border2);}
+.about-strip-inner{max-width:800px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:center;}
+.about-avatar{width:72px;height:72px;background:rgba(240,180,41,0.08);border:1px solid var(--border);border-radius:16px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.8rem;color:var(--accent);flex-shrink:0;}
+.about-text h3{font-family:var(--font-display);font-size:1.5rem;color:var(--text);margin-bottom:0.35rem;}
+.about-text p{font-size:0.83rem;color:var(--muted);line-height:1.75;}
+.about-text p strong{color:var(--text);font-weight:500;}
+
+/* ── SUCCESS STATE ── */
+.success-state{display:none;text-align:center;padding:2rem;}
+.success-icon{width:64px;height:64px;background:rgba(240,180,41,0.1);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin:0 auto 1.25rem;}
+.success-state h3{font-family:var(--font-display);font-size:2rem;color:var(--text);margin-bottom:0.5rem;}
+.success-state p{font-size:0.88rem;color:var(--muted);line-height:1.75;max-width:380px;margin:0 auto;}
+
+/* ── FOOTER ── */
+footer{padding:1.75rem 5%;background:var(--bg);border-top:1px solid var(--border2);text-align:center;}
+footer p{font-size:0.72rem;color:rgba(240,242,247,0.2);letter-spacing:0.04em;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .what-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .about-strip-inner{grid-template-columns:1fr;text-align:center;}
+  .about-avatar{margin:0 auto;}
+  .what-free-strip{flex-direction:column;text-align:center;}
+  .form-guarantees{flex-direction:column;align-items:center;}
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.hero-tag{animation:fadeUp 0.5s ease both 0.1s;}
+.hero-title{animation:fadeUp 0.5s ease both 0.2s;}
+.hero-sub{animation:fadeUp 0.5s ease both 0.35s;}
+.hero-arrow{animation:fadeUp 0.5s ease both 0.5s;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Your<span>SEO</span></div>
+  <div class="nav-badge">
+    <div class="nav-badge-dot"></div>
+    <span>Mackay, QLD</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-tag"><span>100% Free — No Obligation</span></div>
+    <h1 class="hero-title">Your Free<br><span class="yellow">Google</span><br>Audit.</h1>
+    <p class="hero-sub">Find out exactly why your business isn't showing up on Google — and what it would take to fix it. <strong>No call needed. No pressure. Just useful information.</strong></p>
+    <div class="hero-arrow">
+      <span>See what's included</span>
+      <div class="hero-arrow-line"></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT YOU GET -->
+<div class="what">
+  <div class="what-inner">
+    <div class="section-tag"><div class="section-tag-line"></div><span>What's included</span><div class="section-tag-line"></div></div>
+    <h2>What I'll Send You</h2>
+    <p class="what-sub">A clear, honest report covering three key areas — emailed to you within 24 hours.</p>
+    <div class="what-grid">
+      <div class="what-card">
+        <div class="what-icon">🔍</div>
+        <h3>Google Ranking Check</h3>
+        <p>I'll check exactly where your business currently ranks for the most important searches in Mackay — and show you who's beating you and why.</p>
+      </div>
+      <div class="what-card">
+        <div class="what-icon">📍</div>
+        <h3>Google Maps Audit</h3>
+        <p>I'll review your Google Business Profile and identify exactly what's stopping you from appearing in the top 3 results where most customers click.</p>
+      </div>
+      <div class="what-card">
+        <div class="what-icon">⚡</div>
+        <h3>Quick Wins Report</h3>
+        <p>You'll receive a list of specific things you can improve right now to start getting more visibility — even before working with me.</p>
+      </div>
+    </div>
+    <div class="what-free-strip">
+      <p>All of this is <strong>completely free</strong> — no catch, no sales pitch, just genuinely useful information about your business.</p>
+      <div class="free-badge">100% Free</div>
+    </div>
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="form-section" id="form">
+  <div class="form-inner">
+    <div class="form-card">
+      <div id="form-content">
+        <div class="form-card-header">
+          <h2>Request Your Audit</h2>
+          <p>Fill in your details below and I'll get your free Google audit back to you within 24 hours.</p>
+        </div>
+        <form class="form" action="https://formspree.io/f/xeepjgny" method="POST">
+          <div class="form-row">
+            <div class="fg"><label>Your Name</label><input type="text" name="name" placeholder="Jane Smith" required></div>
+            <div class="fg"><label>Business Name</label><input type="text" name="business" placeholder="Smith Plumbing" required></div>
+          </div>
+          <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="jane@yourbusiness.com.au" required></div>
+          <div class="fg"><label>Business Website</label><input type="text" name="website" placeholder="www.yourbusiness.com.au"></div>
+          <div class="fg">
+            <label>Industry / Business Type</label>
+            <input type="text" name="industry" placeholder="e.g. Electrician, Café, Dentist, Trade Supplier">
+          </div>
+          <div class="fg">
+            <label>Biggest challenge on Google</label>
+            <select name="challenge">
+              <option value="">Select one...</option>
+              <option>Not showing up at all on Google</option>
+              <option>Not in the Google Maps top 3</option>
+              <option>Competitors ranking above me</option>
+              <option>No Google reviews</option>
+              <option>Not sure — just want more customers</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Anything else I should know? (optional)</label>
+            <textarea name="notes" placeholder="e.g. I serve the whole Mackay region, I've tried SEO before..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send me my free audit →</button>
+          <div class="form-guarantees">
+            <div class="form-guarantee"><div class="form-guarantee-dot"></div>No call required</div>
+            <div class="form-guarantee"><div class="form-guarantee-dot"></div>No obligation whatsoever</div>
+            <div class="form-guarantee"><div class="form-guarantee-dot"></div>Delivered within 24 hours</div>
+          </div>
+        </form>
+      </div>
+      <div class="success-state" id="success-state">
+        <div class="success-icon">✓</div>
+        <h3>Audit Requested!</h3>
+        <p>Thanks — I'll get your free Google audit put together and sent through within 24 hours. Keep an eye on your inbox.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div class="about-strip-inner">
+    <div class="about-avatar">Y</div>
+    <div class="about-text">
+      <h3>Who's Doing This?</h3>
+      <p>I'm a <strong>local SEO specialist based in Mackay</strong> helping local businesses get found on Google and Google Maps. I use AI-powered tools to deliver results faster and more affordably than traditional agencies — and I'm just starting out, which means you get my absolute best work and full attention.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 GetFound SEO — Mackay, QLD &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a2cac7cececde2dbcdd7d0c0d7d1cbccc7d1d18cc1cdcf8cc3d7">[email&#160;protected]</a></p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function submitForm() {
+  const name = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const biz = document.getElementById('f-biz').value.trim();
+
+  if (!name || !email || !biz) {
+    alert('Please fill in your name, business name and email address.');
+    return;
+  }
+
+  document.getElementBy

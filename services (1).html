@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — SEO & Visibility Mackay</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --bg:#0b0e13;
+  --surface:#13171f;
+  --surface2:#1a1f2b;
+  --accent:#f0b429;
+  --accent2:#ffd166;
+  --text:#f0f2f7;
+  --muted:#8892a4;
+  --border:rgba(240,180,41,0.15);
+  --border2:rgba(240,242,247,0.07);
+  --font-display:'Bebas Neue',sans-serif;
+  --font:'Outfit',sans-serif;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 5%;background:rgba(11,14,19,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border2);}
+.nav-logo{font-family:var(--font-display);font-size:1.5rem;letter-spacing:0.05em;color:var(--text);text-decoration:none;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--accent);}
+.nav-links a.active{color:var(--accent);}
+.nav-cta{background:var(--accent);color:#000!important;padding:0.55rem 1.4rem;border-radius:6px;font-weight:600!important;}
+.nav-cta:hover{opacity:0.85;}
+
+/* ── PAGE HERO ── */
+.page-hero{padding:9rem 5% 5rem;position:relative;overflow:hidden;border-bottom:1px solid var(--border2);}
+.page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(240,180,41,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,180,41,0.03) 1px,transparent 1px);background-size:60px 60px;}
+.page-hero-bar{position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,transparent,var(--accent),transparent);}
+.page-hero-inner{position:relative;z-index:2;max-width:700px;}
+.page-tag{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(240,180,41,0.08);border:1px solid var(--border);padding:0.4rem 1rem;border-radius:4px;margin-bottom:1.5rem;}
+.page-tag span{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);}
+.page-title{font-family:var(--font-display);font-size:clamp(3.5rem,7vw,7rem);line-height:0.92;letter-spacing:0.02em;color:var(--text);margin-bottom:1.25rem;}
+.page-title span{color:var(--accent);}
+.page-sub{font-size:1rem;color:var(--muted);line-height:1.8;max-width:520px;font-weight:300;}
+.page-sub strong{color:var(--text);font-weight:500;}
+
+/* ── SHARED ── */
+section{padding:6rem 5%;}
+.inner{max-width:1100px;margin:0 auto;}
+.section-tag{display:flex;align-items:center;gap:0.6rem;margin-bottom:1.25rem;}
+.section-tag-line{width:24px;height:2px;background:var(--accent);}
+.section-tag span{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
+.section-title{font-family:var(--font-display);font-size:clamp(2.5rem,4vw,4rem);line-height:0.95;letter-spacing:0.02em;color:var(--text);margin-bottom:1rem;}
+.section-sub{color:var(--muted);font-size:0.88rem;line-height:1.85;max-width:500px;margin-bottom:3rem;font-weight:300;}
+
+/* ── WHAT I DO ── */
+#what{background:var(--surface);}
+.what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2rem;}
+.what-card{background:var(--bg);border:1px solid var(--border2);border-radius:12px;padding:2rem;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.3s;}
+.what-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+.what-card:hover{border-color:rgba(240,180,41,0.25);transform:translateY(-3px);}
+.what-card:hover::after{transform:scaleX(1);}
+.what-icon{font-size:1.75rem;margin-bottom:1rem;display:block;}
+.what-card h3{font-family:var(--font-display);font-size:1.5rem;letter-spacing:0.03em;color:var(--text);margin-bottom:0.6rem;}
+.what-card p{font-size:0.82rem;color:var(--muted);line-height:1.8;}
+
+/* ── PRICING ── */
+#pricing{background:var(--bg);}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.price-card{background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:2.75rem;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.3s;display:flex;flex-direction:column;}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--border2);transition:background 0.3s;}
+.price-card:hover{border-color:rgba(240,180,41,0.2);transform:translateY(-4px);}
+.price-card:hover::before{background:var(--accent);}
+.price-card.popular{border-color:rgba(240,180,41,0.2);background:rgba(240,180,41,0.02);}
+.price-card.popular::before{background:var(--accent);}
+.price-card.vip{border-color:rgba(240,180,41,0.3);background:linear-gradient(145deg,rgba(240,180,41,0.04),var(--surface));}
+.price-card.vip::before{background:linear-gradient(90deg,var(--accent),var(--accent2));}
+.price-badge{display:inline-block;font-size:0.62rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:3px 10px;border-radius:4px;margin-bottom:1.25rem;}
+.price-badge.pop{background:var(--accent);color:#000;}
+.price-badge.vip-b{background:transparent;color:var(--accent);border:1px solid var(--border);}
+.price-name{font-family:var(--font-display);font-size:2rem;letter-spacing:0.03em;color:var(--text);margin-bottom:0.5rem;}
+.price-desc{font-size:0.82rem;color:var(--muted);line-height:1.7;margin-bottom:1.75rem;flex:0;}
+.price-amount{font-family:var(--font-display);font-size:3.5rem;color:var(--accent);line-height:1;margin-bottom:0.35rem;}
+.price-amount span{font-size:1rem;color:var(--muted);font-family:var(--font);font-weight:300;}
+.price-period{font-size:0.72rem;color:var(--muted);letter-spacing:0.06em;margin-bottom:1.75rem;}
+.price-divider{height:1px;background:var(--border2);margin-bottom:1.5rem;}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:0.6rem;flex:1;margin-bottom:2rem;}
+.price-features li{font-size:0.8rem;color:rgba(240,242,247,0.65);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.price-features li .check{width:16px;height:16px;border-radius:50%;background:rgba(240,180,41,0.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.6rem;color:var(--accent);}
+.price-features li.vip-only{color:var(--accent);}
+.price-features li.vip-only .check{background:rgba(240,180,41,0.15);border-color:rgba(240,180,41,0.3);}
+.price-cta{display:block;text-align:center;padding:0.9rem;border-radius:8px;font-family:var(--font);font-size:0.82rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;border:1px solid var(--border2);color:var(--text);}
+.price-cta:hover{border-color:var(--accent);color:var(--accent);}
+.price-cta.primary{background:var(--accent);color:#000;border-color:var(--accent);}
+.price-cta.primary:hover{background:var(--accent2);}
+.vip-spots{background:rgba(240,180,41,0.06);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1rem;margin-bottom:1.5rem;font-size:0.75rem;color:var(--muted);}
+.vip-spots strong{color:var(--accent);}
+
+/* ── COMPARE TABLE ── */
+#compare{background:var(--surface);}
+.compare-table{width:100%;border-collapse:collapse;font-size:0.82rem;}
+.compare-table th{font-family:var(--font-display);font-size:1.1rem;letter-spacing:0.05em;padding:1.25rem 1rem;text-align:center;border-bottom:2px solid var(--border2);color:var(--text);}
+.compare-table th:first-child{text-align:left;color:var(--muted);}
+.compare-table th.highlight{color:var(--accent);}
+.compare-table td{padding:0.85rem 1rem;text-align:center;border-bottom:1px solid var(--border2);color:var(--muted);}
+.compare-table td:first-child{text-align:left;color:var(--text);font-weight:500;}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table tr:hover td{background:rgba(240,180,41,0.02);}
+.tick{color:var(--accent);font-size:1rem;}
+.cross{color:rgba(240,242,247,0.2);font-size:0.9rem;}
+.compare-table .price-row td{font-family:var(--font-display);font-size:1.4rem;color:var(--accent);padding-top:1.5rem;}
+.compare-table .price-row td:first-child{font-family:var(--font);font-size:0.82rem;color:var(--muted);font-weight:400;}
+
+/* ── FAQ ── */
+#faq{background:var(--bg);}
+.faq-list{display:flex;flex-direction:column;gap:0.75rem;max-width:720px;}
+.faq-item{background:var(--surface);border:1px solid var(--border2);border-radius:12px;overflow:hidden;transition:border-color 0.3s;}
+.faq-item:hover{border-color:rgba(240,180,41,0.2);}
+.faq-q{padding:1.25rem 1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.faq-q-text{font-size:0.9rem;font-weight:600;color:var(--text);}
+.faq-icon{width:24px;height:24px;border-radius:50%;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:0.9rem;flex-shrink:0;transition:transform 0.3s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{display:none;padding:0 1.5rem 1.25rem;font-size:0.84rem;color:var(--muted);line-height:1.8;}
+.faq-item.open .faq-a{display:block;}
+
+/* ── CTA STRIP ── */
+.cta-strip{background:var(--surface);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:4rem 5%;text-align:center;}
+.cta-strip h2{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.5rem);color:var(--text);margin-bottom:1rem;line-height:0.95;}
+.cta-strip h2 span{color:var(--accent);}
+.cta-strip p{color:var(--muted);font-size:0.9rem;margin-bottom:2rem;font-weight:300;}
+.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#000;padding:0.9rem 2.5rem;border-radius:6px;font-family:var(--font);font-size:0.85rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);}
+.btn-secondary{display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:var(--text);padding:0.9rem 2rem;border-radius:6px;font-family:var(--font);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:1px solid var(--border2);transition:all 0.2s;margin-left:1rem;}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+
+/* ── FOOTER ── */
+footer{padding:2rem 5%;background:var(--bg);border-top:1px solid var(--border2);}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-logo{font-family:var(--font-display);font-size:1.2rem;color:var(--muted);letter-spacing:0.05em;}
+.footer-logo span{color:var(--accent);}
+.footer-links{display:flex;gap:1.5rem;}
+.footer-links a{font-size:0.75rem;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--accent);}
+footer p{font-size:0.72rem;color:rgba(240,242,247,0.2);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .what-grid,.pricing-grid{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .btn-secondary{margin-left:0;margin-top:0.75rem;}
+  .compare-table{font-size:0.72rem;}
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.page-hero-inner>*{animation:fadeUp 0.6s ease both;}
+.page-tag{animation-delay:0.1s;}
+.page-title{animation-delay:0.2s;}
+.page-sub{animation-delay:0.35s;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/getfound/" class="nav-logo">Your<span>SEO</span></a>
+  <div class="nav-links">
+    <a href="/getfound/">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="/getfound/#audit">Free Audit</a>
+    <a href="/getfound/#about">About</a>
+    <a href="/getfound/#contact" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-bar"></div>
+  <div class="page-hero-inner">
+    <div class="page-tag"><span>SEO & Visibility — Mackay QLD</span></div>
+    <h1 class="page-title">What I<br><span>Offer.</span></h1>
+    <p class="page-sub">Everything you need to get found on Google and Google Maps — delivered by a <strong>local Mackay specialist</strong> using AI-powered tools at prices that actually make sense for small business.</p>
+  </div>
+</div>
+
+<!-- WHAT I DO -->
+<section id="what">
+  <div class="inner">
+    <div class="section-tag"><div class="section-tag-line"></div><span>The basics</span></div>
+    <h2 class="section-title">How I Help<br>Your Business.</h2>
+    <p class="section-sub">Every plan I offer is built around one goal — getting more customers to find your business on Google without spending a fortune on ads.</p>
+    <div class="what-grid">
+      <div class="what-card">
+        <span class="what-icon">🔍</span>
+        <h3>Google Rankings</h3>
+        <p>I research the exact keywords your customers are searching, optimise your website around them, and build content that tells Google you're the best result in Mackay for your industry.</p>
+      </div>
+      <div class="what-card">
+        <span class="what-icon">📍</span>
+        <h3>Google Maps & Local SEO</h3>
+        <p>The top 3 results on Google Maps get the majority of clicks. I optimise your Google Business Profile, build local citations, and generate reviews to get you into that top 3.</p>
+      </div>
+      <div class="what-card">
+        <span class="what-icon">✍️</span>
+        <h3>Content That Ranks</h3>
+        <p>Using AI-powered tools I create blog posts and website content that targets the searches your customers are making — bringing in consistent organic traffic every month.</p>
+      </div>
+      <div class="what-card">
+        <span class="what-icon">🔗</span>
+        <h3>Backlink Building</h3>
+        <p>Google ranks websites higher when other reputable sites link to them. I build a consistent pipeline of quality backlinks that grow your authority over time.</p>
+      </div>
+      <div class="what-card">
+        <span class="what-icon">⭐</span>
+        <h3>Review Generation</h3>
+        <p>More Google reviews means higher rankings and more trust from new customers. I set up automated review request systems so your review count grows every month on autopilot.</p>
+      </div>
+      <div class="what-card">
+        <span class="what-icon">📊</span>
+        <h3>Monthly Reporting</h3>
+        <p>Every month you get a clear, easy-to-read report showing exactly where you rank, how much traffic you're getting, and what's been done. No jargon, just results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="inner">
+    <div class="section-tag"><div class="section-tag-line"></div><span>Pricing</span></div>
+    <h2 class="section-title">Simple,<br>Transparent Pricing.</h2>
+    <p class="section-sub">No hidden fees, no lock-in contracts. Pay month to month and cancel anytime — I keep clients by getting results, not by trapping them.</p>
+    <div class="pricing-grid">
+
+      <!-- Starter -->
+      <div class="price-card">
+        <div class="price-name">SEO Starter</div>
+        <div class="price-desc">For businesses just getting started with Google. I'll build your foundation and get you moving in the right direction.</div>
+        <div class="price-amount">$800<span>/mo</span></div>
+        <div class="price-period">Billed monthly · No contract</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><div class="check">✓</div>Full keyword research & strategy</li>
+          <li><div class="check">✓</div>Google Business Profile setup & management</li>
+          <li><div class="check">✓</div>On-page SEO optimisation</li>
+          <li><div class="check">✓</div>2 SEO blog posts per month</li>
+          <li><div class="check">✓</div>Monthly keyword rank tracking</li>
+          <li><div class="check">✓</div>Google review generation strategy</li>
+          <li><div class="check">✓</div>Monthly performance report</li>
+          <li><div class="check">✓</div>Email support</li>
+        </ul>
+        <a href="/getfound/#contact" class="price-cta">Get started →</a>
+      </div>
+
+      <!-- Growth -->
+      <div class="price-card popular">
+        <div class="price-badge pop">Most Popular</div>
+        <div class="price-name">SEO Growth</div>
+        <div class="price-desc">For businesses ready to seriously compete. More content, backlinks, and full competitor monitoring.</div>
+        <div class="price-amount">$1,500<span>/mo</span></div>
+        <div class="price-period">Billed monthly · No contract</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><div class="check">✓</div>Everything in Starter</li>
+          <li><div class="check">✓</div>4 SEO blog posts per month</li>
+          <li><div class="check">✓</div>Backlink building campaign</li>
+          <li><div class="check">✓</div>Competitor monitoring & analysis</li>
+          <li><div class="check">✓</div>Technical SEO fixes</li>
+          <li><div class="check">✓</div>Weekly ranking updates</li>
+          <li><div class="check">✓</div>Advanced Maps optimisation</li>
+          <li><div class="check">✓</div>Priority email support</li>
+        </ul>
+        <a href="/getfound/#contact" class="price-cta primary">Get started →</a>
+      </div>
+
+      <!-- VIP -->
+      <div class="price-card vip">
+        <div class="price-badge vip-b">◆ VIP Membership</div>
+        <div class="price-name">Visibility Pro</div>
+        <div class="price-desc">My exclusive full-service membership for businesses that want to completely dominate their market online.</div>
+        <div class="price-amount">$3,000<span>/mo</span></div>
+        <div class="price-period">Billed monthly · No contract</div>
+        <div class="vip-spots"><strong>Limited spots available</strong> — I only take on a small number of VIP clients at a time to ensure quality.</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><div class="check">✓</div>Everything in Growth</li>
+          <li><div class="check">✓</div>6 SEO blog posts per month</li>
+          <li><div class="check">✓</div>Social media content creation</li>
+          <li><div class="check">✓</div>Full AI automation suite</li>
+          <li><div class="check">✓</div>Dedicated account manager</li>
+          <li><div class="check">✓</div>Priority support & direct access</li>
+          <li class="vip-only"><div class="check">✓</div>Google Ads management — VIP only</li>
+          <li class="vip-only"><div class="check">✓</div>Meta Ads management — VIP only</li>
+        </ul>
+        <a href="/getfound/#contact" class="price-cta">Enquire about membership →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE TABLE -->
+<section id="compare">
+  <div class="inner">
+    <div class="section-tag"><div class="section-tag-line"></div><span>Side by side</span></div>
+    <h2 class="section-title">Compare<br>All Plans.</h2>
+    <p class="section-sub">Not sure which plan is right for you? Here's everything side by side.</p>
+    <div style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Starter</th>
+            <th class="highlight">Growth</th>
+            <th>Visibility Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Keyword research & strategy</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Google Business Profile management</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>On-page SEO optimisation</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Blog posts per month</td><td>2</td><td>4</td><td>6</td></tr>
+          <tr><td>Review generation strategy</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Monthly performance report</td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Backlink building</td><td><span class="cross">✕</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Competitor monitoring</td><td><span class="cross">✕</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Technical SEO fixes</td><td><span class="cross">✕</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Weekly ranking updates</td><td><span class="cross">✕</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Social media content</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Google Ads management</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Meta Ads management</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="tick">✓</span></td></tr>
+          <tr><td>Dedicated account manager</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="tick">✓</span></td></tr>
+          <tr class="price-row">
+            <td>Monthly price</td>
+            <td>$800</td>
+            <td>$1,500</td>
+            <td>$3,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="inner">
+    <div class="section-tag"><div class="section-tag-line"></div><span>FAQ</span></div>
+    <h2 class="section-title">Common<br>Questions.</h2>
+    <p class="section-sub">Everything you might want to know before getting started.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How long does it take to see results?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Most clients start seeing noticeable improvements within 60–90 days. SEO is a long-term strategy — the results build month over month and compound over time. The longer we work together the stronger your rankings get.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Is there a lock-in contract?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">No — all plans are month to month. You can cancel anytime with no penalties. I keep clients by getting results, not by locking them in.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Do I need a website already?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">You'll need a website for the full SEO service to work properly. If you don't have one yet, get in touch and I can point you in the right direction to get one built quickly and affordably.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What makes you different from other SEO agencies?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">I'm local to Mackay which means I understand the local market. I use AI-powered tools to work faster and more efficiently than traditional agencies, which means I can charge less while delivering the same quality. And as someone just starting out, I give every client my full attention.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How do I know what's being done each month?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Every month you receive a clear report showing your keyword rankings, traffic growth, what work was completed, and what's planned for the following month. No jargon — just plain English results.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Can I start with the free audit first?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Absolutely — the free audit is the best place to start. I'll analyse your Google presence and send you a clear report on where you stand and what's holding you back, completely free with no obligation to sign up for anything.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <h2>Ready to Get<br><span>Found on Google?</span></h2>
+  <p>Start with a free audit — no call needed, no obligation, just useful information about your business.</p>
+  <a href="/getfound/#audit" class="btn-primary">Get your free audit →</a>
+  <a href="/getfound/#contact" class="btn-secondary">Get in touch</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Your<span>SEO</span></div>
+    <div class="footer-links">
+      <a href="/getfound/">Home</a>
+      <a href="services.html">Services</a>
+      <a href="/getfound/#audit">Free Audit</a>
+      <a href="/getfound/#contact">Contact</a>
+    </div>
+    <p>© 2026 GetFound SEO — Mackay, QLD</p>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+</body>
+</html>
